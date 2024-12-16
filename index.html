@@ -13,9 +13,9 @@
 
     <!-- config for our rust wasm binary. go to https://trunkrs.dev/assets/#rust for more customization -->
     
-<script type="module" nonce="yXs7g1CUOchv8aDSaXEwsw==">
-import init, * as bindings from '/brush-demo/brush-desktop-bb2a2a1d297ad31e.js';
-const wasm = await init({ module_or_path: '/brush-demo/brush-desktop-bb2a2a1d297ad31e_bg.wasm' });
+<script type="module" nonce="BSyhRE27fgLoA6jHYgmYFg==">
+import init, * as bindings from '/brush-demo/brush-app-39506cd8038e64c5.js';
+const wasm = await init({ module_or_path: '/brush-demo/brush-app-39506cd8038e64c5_bg.wasm' });
 
 
 window.wasmBindings = bindings;
@@ -129,7 +129,7 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
             }
         }
     </style>
-<link rel="modulepreload" href="/brush-demo/brush-desktop-bb2a2a1d297ad31e.js" crossorigin=anonymous integrity="sha384-TBQnA5FKDUG5rSuMufz9HC2KR2Y30hr5gScAhsKVpoxPr+OZfeRs1HhslfOUMKVV"><link rel="preload" href="/brush-demo/brush-desktop-bb2a2a1d297ad31e_bg.wasm" crossorigin=anonymous integrity="sha384-RtpcvjhHAy+8V9y5tLfAJavR0nWZaLmNy4Uc3R1aTPmbAE+xFqJxTCvjchTE3TBm" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="/brush-demo/brush-app-39506cd8038e64c5.js" crossorigin=anonymous integrity="sha384-StZvKVT1ZFq2n9cj+XTdUOOoYvf9E9VAapdtyp9z1vQHDs4jPcfaoKwMayVws8Of"><link rel="preload" href="/brush-demo/brush-app-39506cd8038e64c5_bg.wasm" crossorigin=anonymous integrity="sha384-qjxtAzSb5mqVQ2yDlPOuFD29PQisDSeQ1+JGyjmmsZ1Ub9e0sNr4lHbimSOecXYD" as="fetch" type="application/wasm"></head>
 
 <body>
     <!-- The WASM code will resize the canvas dynamically -->
