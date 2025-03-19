@@ -13,9 +13,9 @@
 
     <!-- config for our rust wasm binary. go to https://trunkrs.dev/assets/#rust for more customization -->
     
-<script type="module" nonce="uZDSimGYjrxbbGE6lCu0Yw==">
-import init, * as bindings from '/brush-demo/brush-app-27a27ec2be6e6194.js';
-const wasm = await init({ module_or_path: '/brush-demo/brush-app-27a27ec2be6e6194_bg.wasm' });
+<script type="module">
+import init, * as bindings from '/brush-demo/brush-app-b39f0e7856df3d45.js';
+const wasm = await init({ module_or_path: '/brush-demo/brush-app-b39f0e7856df3d45_bg.wasm' });
 
 
 window.wasmBindings = bindings;
@@ -28,7 +28,7 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
     <!-- this is the base url relative to which other urls will be constructed. trunk will insert this from the public-url option -->
     <base href="/brush-demo/" />
 
-    <link rel="icon" href="/brush-demo/favicon-f402c8741ce815ec.ico" integrity="sha384&#x2D;jNOAE6jgE03LznIulCTVP6BH4NrTuROFjP9wj8bV1UUMJKtZAvstFpIAP3PDcFpx"/>
+    <link rel="icon" href="/brush-demo/favicon-f402c8741ce815ec.ico" integrity="sha384-jNOAE6jgE03LznIulCTVP6BH4NrTuROFjP9wj8bV1UUMJKtZAvstFpIAP3PDcFpx"/>
 
     
     
@@ -129,7 +129,7 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
             }
         }
     </style>
-<link rel="modulepreload" href="/brush-demo/brush-app-27a27ec2be6e6194.js" crossorigin=anonymous integrity="sha384-fQ3zM9I7V+Xe2/Y6xITmvC7AD5sidG0yccNM3NWYOngM24zSCwLOoylmXE0+tfbw"><link rel="preload" href="/brush-demo/brush-app-27a27ec2be6e6194_bg.wasm" crossorigin=anonymous integrity="sha384-9MpkpQb7LR8BYaJ+49+6FlmirvC5N2tNAwAAy+sysTUvdUR8HnrERppFaw0xtQXP" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="/brush-demo/brush-app-b39f0e7856df3d45.js" crossorigin="anonymous" integrity="sha384-0NP5+16v68XhVsL99sEPpk0qyTILHJYp8C2UCwiEzswWhfgtb5+PSvU5Y7MAVNfg"><link rel="preload" href="/brush-demo/brush-app-b39f0e7856df3d45_bg.wasm" crossorigin="anonymous" integrity="sha384-XFDfD8uIqQtBJJgQeBOBx1uJWRnnFzhm4MqQC9LKfW7tI/HhUtF7S0WjlHKI7B9B" as="fetch" type="application/wasm"></head>
 
 <body>
     <!-- The WASM code will resize the canvas dynamically -->
@@ -241,7 +241,7 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
                         break;
                 }
             };
-            ws.onclose = this.onclose;
+            ws.onclose = () => this.onclose();
         }
 
         onclose() {
@@ -253,7 +253,7 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
                     // rebuilt on restart)
                     const ws = new WebSocket(this.url);
                     ws.onopen = () => window.location.reload();
-                    ws.onclose = this.onclose;
+                    ws.onclose = () => this.onclose();
                 },
                 this.poll_interval);
         }
